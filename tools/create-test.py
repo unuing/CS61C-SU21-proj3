@@ -16,22 +16,19 @@ TRACE_HEADER = [ "ra", "sp", "t0", "t1", "t2", "s0", "s1", "a0", "Requested_Addr
 proj_dir_path = Path(__file__).parent.parent
 cpu_harness_circ_path = proj_dir_path / "harnesses" / "cpu-harness.circ"
 run_circ_path = proj_dir_path / "harnesses" / "run.circ"
-logisim_path = proj_dir_path / "tools" / "logisim"
-venus_path = proj_dir_path / "tools" / "venus"
-
-tools_env = os.environ.copy()
-tools_env["CS61C_TOOLS_ARGS"] = tools_env.get("CS61C_TOOLS_ARGS", "") + " -q"
+logisim_path = proj_dir_path / "tools" / "logisim.jar"
+venus_path = proj_dir_path / "tools" / "venus.jar"
 
 
 class TestCreateException(Exception):
   pass
 
 def generate_test_circ(asm_path, test_circ_path, slug, num_cycles):
-  venus_cmd = [sys.executable, str(venus_path), str(asm_path), "--dump"]
+  venus_cmd = ["java", "-jar", str(venus_path), str(asm_path), "--dump"]
   tmp_inst_hex_file = tempfile.NamedTemporaryFile(delete=False)
   tmp_inst_hex_path = Path(tmp_inst_hex_file.name)
   with tmp_inst_hex_file:
-    proc = subprocess.Popen(venus_cmd, stdout=tmp_inst_hex_file, encoding="utf-8", errors="ignore", env=tools_env)
+    proc = subprocess.Popen(venus_cmd, stdout=tmp_inst_hex_file, encoding="utf-8", errors="ignore")
     proc.wait()
   insts = []
   with tmp_inst_hex_path.open("r") as inst_hex_file:
@@ -69,7 +66,7 @@ def generate_test_circ(asm_path, test_circ_path, slug, num_cycles):
   print(f"[{slug}] generated test circuit")
 
 def generate_output(asm_path, reference_output_path, slug, num_cycles=-1, is_pipelined=False):
-  venus_cmd = [sys.executable, str(venus_path), str(asm_path), "--immutableText", "--trace", "--traceInstFirst", "--tracepattern", TRACE_PATTERN, "--unsetRegisters"]
+  venus_cmd = ["java", "-jar", str(venus_path), str(asm_path), "--immutableText", "--trace", "--traceInstFirst", "--tracepattern", TRACE_PATTERN, "--unsetRegisters"]
   if num_cycles > -1:
     venus_cmd += ["--traceTotalNumCommands", str(num_cycles + 1)]
   if is_pipelined:
@@ -77,7 +74,7 @@ def generate_output(asm_path, reference_output_path, slug, num_cycles=-1, is_pip
   tmp_trace_file = tempfile.NamedTemporaryFile(delete=False)
   tmp_trace_path = Path(tmp_trace_file.name)
   with tmp_trace_file:
-    proc = subprocess.Popen(venus_cmd, stdout=tmp_trace_file, encoding="utf-8", errors="ignore", env=tools_env)
+    proc = subprocess.Popen(venus_cmd, stdout=tmp_trace_file, encoding="utf-8", errors="ignore")
     proc.wait()
   did_error = proc.returncode != 0
   # Venus runtime errors have exit code 0
