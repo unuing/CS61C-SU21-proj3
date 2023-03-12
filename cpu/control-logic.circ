@@ -5,7 +5,6 @@
   <lib desc="#Wiring" name="0">
     <tool name="Splitter">
       <a name="appear" val="center"/>
-      <a name="facing" val="west"/>
       <a name="fanout" val="4"/>
       <a name="incoming" val="4"/>
     </tool>
@@ -402,6 +401,10 @@
       <a name="facing" val="north"/>
       <a name="label" val="ASel"/>
     </comp>
+    <comp lib="0" loc="(660,680)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="b5"/>
+    </comp>
     <comp lib="0" loc="(670,210)" name="Pin">
       <a name="facing" val="south"/>
       <a name="label" val="BSel"/>
@@ -432,6 +435,9 @@
       <a name="facing" val="north"/>
       <a name="label" val="ALUSel"/>
       <a name="width" val="4"/>
+    </comp>
+    <comp lib="0" loc="(770,680)" name="Tunnel">
+      <a name="label" val="BSel"/>
     </comp>
     <comp lib="0" loc="(780,490)" name="Tunnel">
       <a name="label" val="RegWEn"/>
@@ -680,6 +686,7 @@
     <wire from="(650,420)" to="(650,480)"/>
     <wire from="(650,480)" to="(690,480)"/>
     <wire from="(660,570)" to="(670,570)"/>
+    <wire from="(660,680)" to="(770,680)"/>
     <wire from="(660,830)" to="(660,860)"/>
     <wire from="(660,830)" to="(690,830)"/>
     <wire from="(670,210)" to="(670,230)"/>
