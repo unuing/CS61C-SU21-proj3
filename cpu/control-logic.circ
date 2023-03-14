@@ -441,6 +441,10 @@
       <a name="facing" val="east"/>
       <a name="label" val="b5"/>
     </comp>
+    <comp lib="0" loc="(660,740)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="b13"/>
+    </comp>
     <comp lib="0" loc="(670,210)" name="Pin">
       <a name="facing" val="south"/>
       <a name="label" val="BSel"/>
@@ -474,6 +478,9 @@
     </comp>
     <comp lib="0" loc="(770,680)" name="Tunnel">
       <a name="label" val="BSel"/>
+    </comp>
+    <comp lib="0" loc="(770,740)" name="Tunnel">
+      <a name="label" val="BrUn"/>
     </comp>
     <comp lib="0" loc="(780,490)" name="Tunnel">
       <a name="label" val="RegWEn"/>
@@ -780,6 +787,7 @@
     <wire from="(650,930)" to="(670,930)"/>
     <wire from="(660,570)" to="(670,570)"/>
     <wire from="(660,680)" to="(770,680)"/>
+    <wire from="(660,740)" to="(770,740)"/>
     <wire from="(670,210)" to="(670,230)"/>
     <wire from="(670,390)" to="(670,470)"/>
     <wire from="(670,470)" to="(690,470)"/>
