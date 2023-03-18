@@ -299,10 +299,6 @@
       <a name="value" val="0x7"/>
       <a name="width" val="3"/>
     </comp>
-    <comp lib="0" loc="(1200,570)" name="Tunnel">
-      <a name="label" val="ALUSel"/>
-      <a name="width" val="4"/>
-    </comp>
     <comp lib="0" loc="(130,1620)" name="Constant">
       <a name="value" val="0x33"/>
       <a name="width" val="7"/>
