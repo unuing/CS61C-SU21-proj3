@@ -12,9 +12,11 @@
       <a name="facing" val="north"/>
     </tool>
     <tool name="Probe">
+      <a name="facing" val="south"/>
       <a name="radix" val="16"/>
     </tool>
     <tool name="Tunnel">
+      <a name="facing" val="north"/>
       <a name="width" val="2"/>
     </tool>
     <tool name="Pull Resistor">
@@ -141,6 +143,7 @@
     <appear>
       <circ-anchor facing="east" height="6" width="6" x="217" y="227"/>
       <circ-port height="10" pin="1010,210" width="10" x="725" y="225"/>
+      <circ-port height="10" pin="1090,210" width="10" x="775" y="225"/>
       <circ-port height="10" pin="350,210" width="10" x="215" y="225"/>
       <circ-port height="10" pin="420,210" width="10" x="265" y="225"/>
       <circ-port height="10" pin="500,210" width="10" x="315" y="225"/>
@@ -169,6 +172,7 @@
       <text dominant-baseline="alphabetic" fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="159" y="250">inst</text>
       <text dominant-baseline="alphabetic" fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="355" y="250">BrEq</text>
       <text dominant-baseline="alphabetic" fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="388" y="250">BrLt</text>
+      <text dominant-baseline="central" fill="#404040" font-family="SansSerif" font-size="12" text-anchor="middle" x="782" y="245">LoadSel</text>
     </appear>
     <comp lib="0" loc="(100,1070)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -251,6 +255,10 @@
       <a name="facing" val="north"/>
       <a name="label" val="CSRWen"/>
     </comp>
+    <comp lib="0" loc="(1030,360)" name="Bit Extender">
+      <a name="in_width" val="3"/>
+      <a name="out_width" val="2"/>
+    </comp>
     <comp lib="0" loc="(1030,650)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="opcode"/>
@@ -268,6 +276,10 @@
     </comp>
     <comp lib="0" loc="(1040,450)" name="Tunnel">
       <a name="label" val="CSRSel"/>
+    </comp>
+    <comp lib="0" loc="(1050,360)" name="Tunnel">
+      <a name="label" val="LoadSel"/>
+      <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(1050,670)" name="Constant">
       <a name="value" val="0x63"/>
@@ -287,6 +299,17 @@
     <comp lib="0" loc="(1080,830)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="is_jump"/>
+    </comp>
+    <comp lib="0" loc="(1090,210)" name="Pin">
+      <a name="facing" val="south"/>
+      <a name="label" val="LoadSel"/>
+      <a name="output" val="true"/>
+      <a name="width" val="2"/>
+    </comp>
+    <comp lib="0" loc="(1090,230)" name="Tunnel">
+      <a name="facing" val="north"/>
+      <a name="label" val="LoadSel"/>
+      <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(110,910)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -1017,6 +1040,11 @@
       <a name="appear" val="center"/>
       <a name="facing" val="south"/>
     </comp>
+    <comp lib="0" loc="(970,360)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="funct3"/>
+      <a name="width" val="3"/>
+    </comp>
     <comp lib="0" loc="(970,450)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="funct3"/>
@@ -1296,12 +1324,12 @@
     <wire from="(1000,1160)" to="(1020,1160)"/>
     <wire from="(1000,450)" to="(1040,450)"/>
     <wire from="(1010,210)" to="(1010,230)"/>
-    <wire from="(1030,230)" to="(1040,230)"/>
+    <wire from="(1030,230)" to="(1070,230)"/>
+    <wire from="(1030,360)" to="(1050,360)"/>
     <wire from="(1030,540)" to="(1060,540)"/>
     <wire from="(1030,650)" to="(1060,650)"/>
     <wire from="(1030,690)" to="(1060,690)"/>
     <wire from="(1030,730)" to="(1060,730)"/>
-    <wire from="(1040,150)" to="(1040,230)"/>
     <wire from="(1050,670)" to="(1060,670)"/>
     <wire from="(1050,710)" to="(1060,710)"/>
     <wire from="(1050,750)" to="(1060,750)"/>
@@ -1316,18 +1344,22 @@
     <wire from="(1080,1250)" to="(1080,1280)"/>
     <wire from="(1080,1250)" to="(1100,1250)"/>
     <wire from="(1080,830)" to="(1100,830)"/>
+    <wire from="(1090,210)" to="(1090,230)"/>
     <wire from="(110,910)" to="(140,910)"/>
     <wire from="(1100,660)" to="(1120,660)"/>
     <wire from="(1100,700)" to="(1140,700)"/>
     <wire from="(1100,740)" to="(1120,740)"/>
     <wire from="(1100,830)" to="(1100,840)"/>
     <wire from="(1100,840)" to="(1120,840)"/>
+    <wire from="(1110,230)" to="(1130,230)"/>
     <wire from="(1120,420)" to="(1120,480)"/>
     <wire from="(1120,500)" to="(1120,580)"/>
     <wire from="(1120,660)" to="(1120,680)"/>
     <wire from="(1120,680)" to="(1140,680)"/>
     <wire from="(1120,720)" to="(1120,740)"/>
     <wire from="(1120,720)" to="(1140,720)"/>
+    <wire from="(1130,150)" to="(1130,230)"/>
+    <wire from="(1130,320)" to="(1130,400)"/>
     <wire from="(1140,1230)" to="(1170,1230)"/>
     <wire from="(1190,700)" to="(1210,700)"/>
     <wire from="(120,1090)" to="(130,1090)"/>
@@ -1479,7 +1511,7 @@
     <wire from="(290,660)" to="(310,660)"/>
     <wire from="(290,700)" to="(330,700)"/>
     <wire from="(290,740)" to="(350,740)"/>
-    <wire from="(310,150)" to="(1040,150)"/>
+    <wire from="(310,150)" to="(1130,150)"/>
     <wire from="(310,150)" to="(310,230)"/>
     <wire from="(310,230)" to="(330,230)"/>
     <wire from="(310,580)" to="(310,610)"/>
@@ -1634,6 +1666,9 @@
     <wire from="(870,500)" to="(870,580)"/>
     <wire from="(870,580)" to="(1120,580)"/>
     <wire from="(880,210)" to="(880,230)"/>
+    <wire from="(890,320)" to="(1130,320)"/>
+    <wire from="(890,320)" to="(890,400)"/>
+    <wire from="(890,400)" to="(1130,400)"/>
     <wire from="(890,420)" to="(1120,420)"/>
     <wire from="(890,420)" to="(890,480)"/>
     <wire from="(890,480)" to="(1120,480)"/>
@@ -1662,6 +1697,7 @@
     <wire from="(960,230)" to="(990,230)"/>
     <wire from="(960,530)" to="(990,530)"/>
     <wire from="(960,950)" to="(960,960)"/>
+    <wire from="(970,360)" to="(990,360)"/>
     <wire from="(970,450)" to="(980,450)"/>
     <wire from="(970,840)" to="(980,840)"/>
     <wire from="(980,550)" to="(990,550)"/>
