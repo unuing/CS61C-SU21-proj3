@@ -172,7 +172,7 @@
       <text dominant-baseline="alphabetic" fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="159" y="250">inst</text>
       <text dominant-baseline="alphabetic" fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="355" y="250">BrEq</text>
       <text dominant-baseline="alphabetic" fill="#404040" font-family="Dialog" font-size="12" text-anchor="start" x="388" y="250">BrLt</text>
-      <text dominant-baseline="central" fill="#404040" font-family="SansSerif" font-size="12" text-anchor="middle" x="782" y="245">LoadSel</text>
+      <text dominant-baseline="central" fill="#404040" font-family="SansSerif" font-size="12" text-anchor="middle" x="782" y="245">MemSel</text>
     </appear>
     <comp lib="0" loc="(100,1070)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -278,7 +278,7 @@
       <a name="label" val="CSRSel"/>
     </comp>
     <comp lib="0" loc="(1050,360)" name="Tunnel">
-      <a name="label" val="LoadSel"/>
+      <a name="label" val="MemSel"/>
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(1050,670)" name="Constant">
@@ -302,13 +302,13 @@
     </comp>
     <comp lib="0" loc="(1090,210)" name="Pin">
       <a name="facing" val="south"/>
-      <a name="label" val="LoadSel"/>
+      <a name="label" val="MemSel"/>
       <a name="output" val="true"/>
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(1090,230)" name="Tunnel">
       <a name="facing" val="north"/>
-      <a name="label" val="LoadSel"/>
+      <a name="label" val="MemSel"/>
       <a name="width" val="2"/>
     </comp>
     <comp lib="0" loc="(110,910)" name="Tunnel">
