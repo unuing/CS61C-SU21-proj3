@@ -20,4 +20,9 @@ srli t2 t0 10
 srai t2 t0 10
 ori t2 t0 10
 andi t2 t0 10
+addi t2 t0 -10
+slti t2 t0 -10
+xori t2 t0 -10
+ori t2 t0 -10
+andi t2 t0 -10
 
