@@ -391,17 +391,17 @@
       <a name="label" val="WRITE_DATA"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="0" loc="(1830,850)" name="Tunnel">
-      <a name="facing" val="east"/>
-      <a name="label" val="WRITE_ADDRESS"/>
-      <a name="width" val="32"/>
-    </comp>
     <comp lib="0" loc="(1860,1030)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="WRITE_ADDRESS"/>
       <a name="width" val="32"/>
     </comp>
     <comp lib="0" loc="(1860,1080)" name="Tunnel">
+      <a name="facing" val="east"/>
+      <a name="label" val="WRITE_ADDRESS"/>
+      <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(1870,840)" name="Tunnel">
       <a name="facing" val="east"/>
       <a name="label" val="WRITE_ADDRESS"/>
       <a name="width" val="32"/>
@@ -426,15 +426,6 @@
       <a name="locked" val="true"/>
       <a name="output" val="true"/>
       <a name="width" val="32"/>
-    </comp>
-    <comp lib="0" loc="(1880,820)" name="Constant">
-      <a name="value" val="0x3"/>
-      <a name="width" val="5"/>
-    </comp>
-    <comp lib="0" loc="(1880,850)" name="Bit Extender">
-      <a name="in_width" val="32"/>
-      <a name="out_width" val="5"/>
-      <a name="type" val="zero"/>
     </comp>
     <comp lib="0" loc="(190,150)" name="Tunnel">
       <a name="facing" val="east"/>
@@ -464,6 +455,11 @@
       <a name="facing" val="east"/>
       <a name="label" val="ToWrite"/>
       <a name="width" val="32"/>
+    </comp>
+    <comp lib="0" loc="(1920,840)" name="Bit Extender">
+      <a name="in_width" val="32"/>
+      <a name="out_width" val="5"/>
+      <a name="type" val="zero"/>
     </comp>
     <comp lib="0" loc="(1920,870)" name="Constant">
       <a name="value" val="0x3"/>
@@ -1018,10 +1014,6 @@
       <a name="label" val="sp"/>
       <a name="width" val="32"/>
     </comp>
-    <comp lib="1" loc="(1930,840)" name="AND Gate">
-      <a name="size" val="30"/>
-      <a name="width" val="5"/>
-    </comp>
     <comp lib="1" loc="(2010,790)" name="AND Gate">
       <a name="size" val="30"/>
       <a name="width" val="32"/>
@@ -1242,23 +1234,19 @@
     <wire from="(1830,330)" to="(2220,330)"/>
     <wire from="(1830,50)" to="(1830,110)"/>
     <wire from="(1830,50)" to="(2220,50)"/>
-    <wire from="(1830,850)" to="(1840,850)"/>
     <wire from="(1860,1030)" to="(1870,1030)"/>
     <wire from="(1860,1080)" to="(1870,1080)"/>
-    <wire from="(1880,820)" to="(1890,820)"/>
-    <wire from="(1880,850)" to="(1900,850)"/>
-    <wire from="(1890,820)" to="(1890,830)"/>
-    <wire from="(1890,830)" to="(1900,830)"/>
+    <wire from="(1870,840)" to="(1880,840)"/>
     <wire from="(190,150)" to="(250,150)"/>
     <wire from="(190,600)" to="(230,600)"/>
     <wire from="(190,630)" to="(210,630)"/>
     <wire from="(1910,1030)" to="(1940,1030)"/>
     <wire from="(1910,1080)" to="(1940,1080)"/>
     <wire from="(1920,680)" to="(1950,680)"/>
+    <wire from="(1920,840)" to="(1940,840)"/>
     <wire from="(1920,870)" to="(1930,870)"/>
     <wire from="(1930,1010)" to="(1940,1010)"/>
     <wire from="(1930,1060)" to="(1940,1060)"/>
-    <wire from="(1930,840)" to="(1940,840)"/>
     <wire from="(1930,860)" to="(1930,870)"/>
     <wire from="(1930,860)" to="(1940,860)"/>
     <wire from="(1960,440)" to="(1970,440)"/>
